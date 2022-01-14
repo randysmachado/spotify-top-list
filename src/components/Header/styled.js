@@ -18,3 +18,8 @@ export const Title = styled.h1`
     margin-left: 1.6rem;
   }
 `
+export const Description = styled.p`
+  color: #73788d;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+`

@@ -1,77 +1,29 @@
 import * as S from './styled'
 import Link from 'next/link'
 
-const Tracks = () => (
-  <>
-    <S.Title> Tracks </S.Title>
+const Tracks = ({ tracks }) => (
+  <S.Wrapper>
+    <S.Title> Top Tracks </S.Title>
+
     <S.List>
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
+      {tracks.map((track) => (
+        <S.ListItem key={track.id}>
+          <Link href={track.external_urls.spotify}>
+            <a target="_blank" rel="nofollow noreferrer noopener">
+              <img
+                src={track.album.images[0].url}
+                width={track.album.images[0].width}
+                height={track.album.images[0].height}
+                alt={track.name}
+              />
+            </a>
+          </Link>
+          <S.Name>{track.name}</S.Name>
+          <S.Player controls src={track.preview_url} />
+        </S.ListItem>
+      ))}
     </S.List>
-  </>
+  </S.Wrapper>
 )
 
 export default Tracks

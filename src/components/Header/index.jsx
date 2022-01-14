@@ -7,6 +7,7 @@ const Header = () => (
     <S.Title>
       Top List Spotify <FaSpotify size={36} color="#1EB955" />
     </S.Title>
+    <S.Description>Atualizado diariamente</S.Description>
   </S.Wrapper>
 )
 

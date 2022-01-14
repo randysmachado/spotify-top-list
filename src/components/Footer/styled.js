@@ -11,4 +11,13 @@ export const PoweredBy = styled.p`
   color: #fff;
   font-size: 1.6rem;
   text-align: center;
+
+  a {
+    color: #1eb955;
+    text-decoration: none;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
 `

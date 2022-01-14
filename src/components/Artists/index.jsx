@@ -1,77 +1,23 @@
 import * as S from './styled'
 import Link from 'next/link'
 
-const Artists = () => (
-  <>
-    <S.Title> Artists </S.Title>
+const Artists = ({ artists }) => (
+  <S.Wrapper>
+    <S.Title> Top Artists </S.Title>
+
     <S.List>
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
-
-      <S.ListItem>
-        <Link href="#">
-          <a>
-            <img
-              src="https://www.bellashop.es/wp-content/uploads/2019/08/Pink-Floyd-Animals-Alb%C3%BAm-Vinilo-33-rpm.jpg"
-              alt="Pink Floyd"
-            />
-          </a>
-        </Link>
-      </S.ListItem>
+      {artists.map((artist) => (
+        <S.ListItem key={artist.id}>
+          <Link href={artist.external_urls.spotify}>
+            <a target="_blank" rel="nofollow noreferrer noopener">
+              <img src={artist.images[0].url} alt={artist.name} />
+            </a>
+          </Link>
+          <S.Name>{artist.name}</S.Name>
+        </S.ListItem>
+      ))}
     </S.List>
-  </>
+  </S.Wrapper>
 )
 
 export default Artists
