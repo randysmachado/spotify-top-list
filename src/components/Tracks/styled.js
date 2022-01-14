@@ -38,7 +38,7 @@ export const ListItem = styled.li`
 `
 
 export const Player = styled.audio`
-  width: 9rem;
+  width: 10rem;
   height: 4rem;
 
   &::-webkit-media-controls-panel {
