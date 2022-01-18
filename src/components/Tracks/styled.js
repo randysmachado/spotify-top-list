@@ -37,47 +37,7 @@ export const ListItem = styled.li`
   }
 `
 
-export const Player = styled.audio`
-  width: 10rem;
-  height: 4rem;
-
-  &::-webkit-media-controls-panel {
-    background-color: #1eb955;
-    color: #fff;
-  }
-
-  &::-webkit-media-controls-play-button {
-    background-color: #20954a;
-    border-radius: 50%;
-  }
-
-  &::-webkit-media-controls-mute-button,
-  &::-webkit-media-controls-timeline-container,
-  &::-webkit-media-controls-current-time-display,
-  &::-webkit-media-controls-time-remaining-display,
-  &::-webkit-media-controls-timeline,
-  &::-webkit-media-controls-volume-slider-container,
-  &::-webkit-media-controls-volume-slider,
-  &::-webkit-media-controls-seek-back-button,
-  &::-webkit-media-controls-seek-forward-button,
-  &::-webkit-media-controls-fullscreen-button,
-  &::-webkit-media-controls-rewind-button,
-  &::-webkit-media-controls-return-to-realtime-button,
-  &::-webkit-media-controls-toggle-closed-captions-button {
-    display: none;
-  }
-`
-
 export const Name = styled.p`
   font-size: 1.6rem;
   margin: 1rem 0;
 `
-// &::-webkit-media-controls-panel
-// &::-webkit-media-controls-play-button
-// &::-webkit-media-controls-current-time-display
-// &::-webkit-media-controls-time-remaining-display
-
-//
-// &::-webkit-media-controls-rewind-button
-// &::-webkit-media-controls-return-to-realtime-button
-// &::-webkit-media-controls-toggle-closed-captions-button
