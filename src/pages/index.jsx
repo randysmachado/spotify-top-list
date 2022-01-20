@@ -44,6 +44,6 @@ export async function getStaticProps() {
 
   return {
     props: { artists, tracks },
-    revalidate: 24 * 60 * 60 * 1000
+    revalidate: 60 * 60 * 12
   }
 }
